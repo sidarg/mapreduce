@@ -1,0 +1,47 @@
+#0
+SELECT Payment, SUM(Sales)
+FROM minipurchases
+GROUP BY Payment
+ORDER BY Payment;
+
+#1
+SELECT Category, SUM(Sales)
+FROM minipurchases
+GROUP BY Category
+ORDER BY Category;
+
+#2
+SELECT Category, COUNT(Sales)
+FROM minipurchases
+GROUP BY Category
+ORDER BY Category;
+
+#3
+BEGIN TRY
+  IF COUNT(minipurchases) < 6
+    BEGIN
+      RAISERROR('no')
+    END
+    SELECT Category, COUNT(Sales)
+    FROM minipurchases
+    GROUP BY Category
+    ORDER BY Category;
+END TRY
+
+#4
+SELECT Category, SUM(Sales)
+FROM minipurchases
+WHERE Category = 'Computers' OR Category = 'Cameras' OR Category = 'Video Games'
+GROUP BY Category
+ORDER BY Category;
+
+#5
+SELECT Category, COUNT(Sales)
+FROM minipurchases
+GROUP BY Category
+HAVING COUNT(Sales) >= 114;
+
+#6
+SELECT Category, AVG(Sales)
+from minipurchases
+GROUP BY Category;
