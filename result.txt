@@ -1,3 +1,3 @@
-Cameras	27228.21
-Computers	28330.62
-Video Games	29817.37
+Cameras	114
+Computers	117
+Video Games	115
