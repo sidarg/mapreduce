@@ -10,6 +10,7 @@ import sys
 # Input will be piped into the standard input (e.g. with cat on the command line)
 # Fields (Date, Time, Item, Category, Sales, Payment):
 # 2012-12-31	16:26	Anaheim	Men's Clothing		205.96	Visa
+
 # 2012-12-31	16:29	Irvine	Women's Clothing	22.47		Cash
 # 2012-12-31	16:30	Laredo	Women's Clothing	444.19	Cash
 
@@ -35,31 +36,15 @@ for line in sys.stdin:
     data = line.strip().split("\t")
 
     # store the 6 elements of the tuple in seperate variables
-    date, time, item, category, sales, payment = data
+    if len(data)<6:
+        raise Exception('no')
+    else: date, time, item, category, sales, payment = data
 
     # Write the key-value combination to standard output (stdout)
     # Key is the payment, value is the sales     
     # With a tab (\t) between key and value
     # New line \n means new record
->q
-:q
-:Q
-:q
-
-
-
-
-
-
- 
-
-3rg\kpwr h]tioqeh
-t
-
-
-
-
-:q
-exit
-
-    sys.stdout.write("{0}\t{1}\n".format(category, sales))
+    if category in ["Computers", "Cameras", "Video Games"]:
+        sys.stdout.write("{0}\t{1}\n".format(category, sales))
+    else:
+        pass

@@ -1,5 +1,3 @@
-Amex	93479.83
-Cash	100726.37
-Discover	97172.73
-MasterCard	94885.53
-Visa	105558.2
+Cameras	27228.21
+Computers	28330.62
+Video Games	29817.37
